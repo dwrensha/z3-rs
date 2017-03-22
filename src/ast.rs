@@ -179,6 +179,13 @@ impl<'ctx> Ast<'ctx> {
         }
     }
 
+    pub fn extract(&self, high: u32, low: u32) -> Ast {
+        Ast::new(self.ctx, unsafe {
+                let guard = Z3_MUTEX.lock().unwrap();
+                Z3_mk_extract(self.ctx.z3_ctx, high, low, self.z3_ast)
+        })
+    }
+
     varop!(distinct, Z3_mk_distinct);
 
     // Boolean ops
