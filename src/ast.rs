@@ -118,6 +118,14 @@ impl<'ctx> Ast<'ctx> {
             })
     }
 
+    pub fn bv_from_u64(ctx: &'ctx Context, u: u64, sz: u32) -> Ast<'ctx> {
+            Ast::new(ctx, unsafe {
+                let sort = ctx.bitvector_sort(sz);
+                let guard = Z3_MUTEX.lock().unwrap();
+                Z3_mk_unsigned_int64(ctx.z3_ctx, u, sort.z3_sort)
+            })
+    }
+
     pub fn from_real(ctx: &'ctx Context, num: i32, den: i32) -> Ast<'ctx> {
             Ast::new(ctx, unsafe {
                 let guard = Z3_MUTEX.lock().unwrap();
