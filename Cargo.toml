@@ -1,14 +1,14 @@
 [package]
-name = "z3"
-version = "0.2.0"
-authors = ["Graydon Hoare <graydon@pobox.com>"]
+name = "seer-z3"
+version = "0.1.0"
+authors = ["David Renshaw <david@sandstorm.io>"]
 
 description = "High-level rust bindings for the Z3 SMT solver from Microsoft Research"
 license = "MIT"
 keywords = ["FFI", "SMT", "satisfiability", "solver"]
 readme = "README.md"
-homepage = "https://github.com/graydon/z3-rs"
-repository = "https://github.com/graydon/z3-rs.git"
+homepage = "https://github.com/dwrensha/z3-rs"
+repository = "https://github.com/dwrensha/z3-rs.git"
 
 [dependencies]
 libc = "0.2"
