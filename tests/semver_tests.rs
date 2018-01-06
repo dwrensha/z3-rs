@@ -5,7 +5,7 @@
 extern crate log;
 extern crate env_logger;
 extern crate semver;
-extern crate z3;
+extern crate seer_z3 as z3;
 
 use z3::*;
 use semver::{Version, VersionReq};
@@ -155,7 +155,7 @@ fn test_solve_simple_semver_example() {
                         ].iter().map(|&(v,r)| Spec::new(v,r)).collect());
 
 
-    let mut cfg = Config::new();
+    let cfg = Config::new();
     let ctx = Context::new(&cfg);
     let opt = Optimize::new(&ctx);
 

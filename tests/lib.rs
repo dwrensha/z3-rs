@@ -2,7 +2,7 @@
 extern crate log;
 extern crate env_logger;
 
-extern crate z3;
+extern crate seer_z3 as z3;
 use z3::*;
 
 #[test]
