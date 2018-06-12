@@ -1,6 +1,6 @@
 [package]
 name = "seer-z3"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["David Renshaw <david@sandstorm.io>"]
 
 description = "High-level rust bindings for the Z3 SMT solver from Microsoft Research"
