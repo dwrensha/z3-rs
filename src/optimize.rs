@@ -49,7 +49,7 @@ impl<'ctx> Optimize<'ctx> {
         unsafe {
             let guard = Z3_MUTEX.lock().unwrap();
             Z3_optimize_check(self.ctx.z3_ctx,
-                              self.z3_opt) == Z3_TRUE
+                              self.z3_opt) == Z3_L_TRUE
         }
     }
 
