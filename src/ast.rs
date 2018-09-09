@@ -194,6 +194,20 @@ impl<'ctx> Ast<'ctx> {
         })
     }
 
+    pub fn zero_extend(&self, size: u32) -> Ast<'ctx> {
+        Ast::new(self.ctx, unsafe {
+                let guard = Z3_MUTEX.lock().unwrap();
+                Z3_mk_zero_ext(self.ctx.z3_ctx, size, self.z3_ast)
+        })
+    }
+
+    pub fn sign_extend(&self, size: u32) -> Ast<'ctx> {
+        Ast::new(self.ctx, unsafe {
+                let guard = Z3_MUTEX.lock().unwrap();
+                Z3_mk_sign_ext(self.ctx.z3_ctx, size, self.z3_ast)
+        })
+    }
+
     varop!(distinct, Z3_mk_distinct);
 
     // Boolean ops
